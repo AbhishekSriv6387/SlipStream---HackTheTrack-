@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slipstream - vehicle data marketplace (clickable prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Invisible track used to move the car dot along the circuit -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <path id="trackPath" d="M60,170 C40,120 70,60 130,55 C190,50 200,100 250,95 C310,88 340,40 365,80 C390,125 340,190 280,195 C230,200 220,160 170,170 C130,178 90,215 60,170 Z"/>
+</svg>
+
+<header class="top">
+  <div class="brand">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="4" fill="#FFC20E"/><path d="M8 24 L17 9 L26 24 M13 24 L17 17 L21 24" fill="none" stroke="#14212B" stroke-width="3" stroke-linejoin="round"/></svg>
+    <div><strong>Slipstream</strong><span>Vehicle data marketplace by the OEM</span></div>
+  </div>
+  <nav class="tabs" aria-label="Choose a view">
+    <button class="tab" data-act="nav" data-arg="overview">Overview</button>
+    <button class="tab" data-act="nav" data-arg="driver">Customer app</button>
+    <button class="tab" data-act="nav" data-arg="business">Business portal</button>
+    <button class="tab" data-act="nav" data-arg="developer">Developer portal</button>
+    <button class="tab" data-act="nav" data-arg="oem">OEM console</button>
+  </nav>
+  <div class="tools">
+    <button class="btn primary sm" data-act="tour">Guided demo</button>
+    <button class="btn dark sm" data-act="pause" id="pauseBtn">Pause clock</button>
+    <button class="btn dark sm" data-act="resetDemo">Reset</button>
+  </div>
+</header>
+<div class="road" aria-hidden="true"></div>
+
+<div class="shell" id="shell">
+  <nav class="side" id="side" aria-label="Section menu"></nav>
+  <main id="main" tabindex="-1"></main>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="modal" class="modal" hidden></div>
+<aside id="tour" class="tour" aria-label="Guided demo" hidden></aside>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
